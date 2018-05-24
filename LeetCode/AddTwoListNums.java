@@ -100,15 +100,24 @@ public class AddTwoListNums {
 		n2.next = new ListNode(4);
 		n2 = n2.next;
 		
+		System.out.println();
 		System.out.println("Second Number");
 		show(h2);
 				
 		ListNode h3 =  addTwoNumbers(h1, h2);
-		
+		System.out.println();
 		System.out.println("Summation");
 		show(h3);
 		
-	}
-	
-	
+	}	
 }
+
+/**
+ * Output:
+ * First Number
+ * 2 -> 4 -> 3 -> null
+ * Second Number
+ * 5 -> 6 -> 4 -> null
+ * Summation
+ * 7 -> 0 -> 8 -> null
+*/
