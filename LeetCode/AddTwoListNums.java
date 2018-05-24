@@ -81,6 +81,8 @@ public class AddTwoListNums {
 	}
 	
 	public static void main(String[] args) {	
+		
+		System.out.println("Case 1:");
 		ListNode h1, n1;
 		n1 = new ListNode(2);
 		h1 = n1;
@@ -88,7 +90,6 @@ public class AddTwoListNums {
 		n1 = n1.next;
 		n1.next = new ListNode(3);
 		n1 = n1.next;
-
 		System.out.println("First Number");
 		show(h1);
 		
@@ -98,8 +99,7 @@ public class AddTwoListNums {
 		n2.next = new ListNode(6);
 		n2 = n2.next;
 		n2.next = new ListNode(4);
-		n2 = n2.next;
-		
+		n2 = n2.next;		
 		System.out.println();
 		System.out.println("Second Number");
 		show(h2);
@@ -108,16 +108,53 @@ public class AddTwoListNums {
 		System.out.println();
 		System.out.println("Summation");
 		show(h3);
-		
+		System.out.println("\nExplanation: 342 + 465 = 807");
+				
+		System.out.println("----------");
+		System.out.println("Case 2:");
+		n1 = new ListNode(8);
+		h1 = n1;
+		n1.next = new ListNode(1);
+		n1 = n1.next;
+		n1.next = new ListNode(2);
+		n1 = n1.next;
+		System.out.println("First Number");
+		show(h1);
+
+		n2 = new ListNode(2);
+		h2 = n2;
+		n2.next = new ListNode(1);
+		n2 = n2.next;
+		System.out.println();
+		System.out.println("Second Number");
+		show(h2);
+				
+		h3 =  addTwoNumbers(h1, h2);
+		System.out.println();
+		System.out.println("Summation");
+		show(h3);
+		System.out.println("\nExplanation: 218 + 21 = 230");
 	}	
 }
 
 /**
- * Output:
- * First Number
- * 2 -> 4 -> 3 -> null
- * Second Number
- * 5 -> 6 -> 4 -> null
- * Summation
- * 7 -> 0 -> 8 -> null
+Output:
+First Number
+2 -> 4 -> 3 -> null
+Second Number
+5 -> 6 -> 4 -> null
+Summation
+7 -> 0 -> 8 -> null
+Explanation: 342 + 465 = 807
+
+----------
+Case 2:
+First Number
+8 -> 1 -> 2 -> null
+Second Number
+2 -> 1 -> null
+Summation
+0 -> 3 -> 2 -> null
+Explanation: 218 + 21 = 230
+
 */
