@@ -1,3 +1,3 @@
 # Coding-Challenge
 
-Solutions for HackerRank coding challenge
+Solutions for LeetCode and HackerRank coding challenge
