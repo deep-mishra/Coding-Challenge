@@ -9,7 +9,8 @@ public class PermutationString {
 	
 	/**
 	 * Method returns true if str1 is permutation of str2. It makes use of
-	 * integer array to track if all the chars from str1 is present in str2
+	 * integer array to track if all the chars from str1 is present in str2.
+	 * It works in O(n) time space.
 	 * @param str1
 	 * @param str2
 	 * @return
