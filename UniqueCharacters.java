@@ -29,6 +29,9 @@ public class UniqueCharacters {
 	/**
 	 * Method returns true if the string contains all unique characters.
 	 * The complexity of program is O(n) with LESS extra space
+	 * Technique - Left shift one by the displacement value of a character and
+	 *             do bitwise and with all previous chars. If the result is greater than 0
+	 *             there is a duplicate character
 	 * @param str
 	 * @return
 	 */
