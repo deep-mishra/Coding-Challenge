@@ -46,6 +46,11 @@ public class PermutationString {
 		str2 = "abcdef";
 		System.out.println("Is: " + str1 + " permuation of: " + str2 + " Result: " + isPermutation(str1, str2));
 	
+		System.out.println("CASE4:");
+		str1 = "ab cde";
+		str2 = "deca b";
+		System.out.println("Is: " + str1 + " permuation of: " + str2 + " Result: " + isPermutation(str1, str2));
+	
 	}
 
 }
@@ -58,5 +63,7 @@ CASE2:
 Is: abcde permuation of: dec Result: false
 CASE3:
 Is: def permuation of: abcdef Result: false
+CASE4:
+Is: ab cde permuation of: deca b Result: true
 
 */
