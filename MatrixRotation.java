@@ -1,6 +1,6 @@
 
 /**
- * Rotate N X N matrix to right
+ * Rotate N X N Matrix to right
  * @author Deep
  *
  */
