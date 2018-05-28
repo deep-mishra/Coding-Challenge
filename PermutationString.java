@@ -1,11 +1,11 @@
 
-/** Program to find if a string is permuation of other other string
- * 
+/**
+ * Program to find if a string is permutation of other other string
  * @author Deep
  *
  */
 
-public class PermutationString {
+public class PermutationString { 
 	
 	/**
 	 * Method returns true if str1 is permutation of str2. It makes use of
