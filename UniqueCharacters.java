@@ -1,6 +1,6 @@
 
-/** Determine if string has all unique character in n timespace
- * 
+/** 
+ * Determine if string has all unique character in n timespace
  * @author Deep
  *
  */
@@ -29,9 +29,6 @@ public class UniqueCharacters {
 	/**
 	 * Method returns true if the string contains all unique characters.
 	 * The complexity of program is O(n) with LESS extra space
-	 * Technique - Left shift one by the displacement value of a character and
-	 *             do bitwise and with all previous chars. If the result is greater than 0
-	 *             there is a duplicate character
 	 * @param str
 	 * @return
 	 */
@@ -40,21 +37,28 @@ public class UniqueCharacters {
 		int checker = 0;
 		for(int i=0; i<str.length(); i++) {
 			int value = str.charAt(i) - 'a';
+			System.out.println("initial: " + Integer.toBinaryString(value));
+			System.out.println("shift: " + Integer.toBinaryString(1 << value));
+			System.out.println("and: " + Integer.toBinaryString(checker & (1 << value)));
+			
 			if((checker & (1 << value)) > 0) {
 				return false;
 			}
+			System.out.println("checker: " + Integer.toBinaryString(checker));
 			checker |= (1 << value);
+			System.out.println("update: " + Integer.toBinaryString(checker));
+			System.out.println();
 		}		
 		return true;
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Technique 1:");
-		System.out.println("Input: " + "abcded" + " ---- Output: " + hasUniqueChars("abcded"));
-		System.out.println("Input: " + "abcdewl" + " ---- Output: " + hasUniqueChars("abcdewl"));
-		
-		System.out.println("Technique 2:");
-		System.out.println("Input: " + "abcded" + " ---- Output: " + hasUniqueCharsBetter("abcded"));
+//		System.out.println("Technique 1:");
+//		System.out.println("Input: " + "abcded" + " ---- Output: " + hasUniqueChars("abcded"));
+//		System.out.println("Input: " + "abcdewl" + " ---- Output: " + hasUniqueChars("abcdewl"));
+//		
+//		System.out.println("Technique 2:");
+		//System.out.println("Input: " + "abcded" + " ---- Output: " + hasUniqueCharsBetter("abcded"));
 		System.out.println("Input: " + "abcdewl" + " ---- Output: " + hasUniqueCharsBetter("abcdewl"));
 	}
 }
