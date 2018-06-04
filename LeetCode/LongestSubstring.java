@@ -1,4 +1,4 @@
-package com;
+
 
 /**
  * Given a string, find the length of the longest substring without repeating characters.
@@ -27,26 +27,36 @@ public class LongestSubstring {
 		StringBuilder subSeq = new StringBuilder();				//Holds the longest subsequence without repetition
 		String longestSubseq = null;
 		boolean repeated = false;
+		int backoffOfset = 0;
 		int maxLen = 0;
-		
-		for (int i = 0; i < s.length(); i++) {
+		int i=0;
+		while(i<s.length()) {
 			char c = s.charAt(i);
-			for (int j = 0; j < subSeq.length(); j++) {
-				if (c == subSeq.charAt(j)) {
+			
+			for(int j=0;j<subSeq.length();j++) {
+				if(c == subSeq.charAt(j)) {
 					repeated = true;
+					backoffOfset = subSeq.length()-1-j;
 				}
 			}
-			if (repeated == false) {
-				subSeq.append(c);
-			} else {
-				if (subSeq.length() > maxLen) {
-					repeated = false;
+			
+			if(repeated) {
+				if(subSeq.length()>maxLen) {
 					maxLen = subSeq.length();
 					longestSubseq = subSeq.toString();
-					subSeq.setLength(0);
-					subSeq.append(c);
 				}
+				repeated = false;
+				subSeq.setLength(0);
+				i = i - backoffOfset;
+			} else {
+				subSeq.append(c);
+				i++;				
 			}
+		}
+		
+		if (subSeq.length() > maxLen) { // If last character was not repeated and it increased the subseq length
+			maxLen = subSeq.length();
+			longestSubseq = subSeq.toString();
 		}
 		
 		return longestSubseq;
@@ -69,6 +79,24 @@ public class LongestSubstring {
 		System.out.println("Case 3:");
 		System.out.println("Input: " + input + " ---- Output Substring: " + result + " length: " + result.length());
 		
+		input = "c";
+		result = lengthOfLongestSubstring(input);
+		System.out.println("Case 4:");
+		System.out.println("Input: " + input + " ---- Output Substring: " + result + " length: " + result.length());
+		
+		
+		input = "dvdf";
+		result = lengthOfLongestSubstring(input);
+		System.out.println("Case 5:");
+		System.out.println("Input: " + input + " ---- Output Substring: " + result + " length: " + result.length());
+		
+		
+		
+		input = "anviaj";
+		result = lengthOfLongestSubstring(input);
+		System.out.println("Case 6:");
+		System.out.println("Input: " + input + " ---- Output Substring: " + result + " length: " + result.length());
+		
 	}
 
 }
@@ -83,5 +111,12 @@ Case 2:
 Input: bbbbb ---- Output Substring: b length: 1
 Case 3:
 Input: pwwkew ---- Output Substring: wke length: 3
+Case 4:
+Input: c ---- Output Substring: c length: 1
+Case 5:
+Input: dvdf ---- Output Substring: vdf length: 3
+Case 6:
+Input: anviaj ---- Output Substring: nviaj length: 5
+
 
 */
