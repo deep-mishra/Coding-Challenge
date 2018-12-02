@@ -9,7 +9,7 @@ class Solution {
     public int[] productExceptSelf(int[] iptArr) {
       
 	    int prdt=1; //product of elements in input array
-        int zeroCount = 0; // counter for number of zero
+        int zeroCount = 0; // counts numbe of zero
 	    for(int i=0;i<iptArr.length;i++){ //find product
 		    if(iptArr[i]!=0) {	 //if not zero
 			    prdt*=iptArr[i]; 
